@@ -1,0 +1,13 @@
+version: "3"
+services:
+  xotomicro-front-hook-system:
+    build:
+      context: ./
+      dockerfile: docker/dockerfile.development
+      args:
+        - GITHUB_TOKEN=${GITHUB_TOKEN}
+    container_name: xotomicro-front-hook-system
+    ports:
+      - 7076:7076
+    volumes:
+      - ./:/app
